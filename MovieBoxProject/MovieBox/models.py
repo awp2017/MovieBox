@@ -18,3 +18,11 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.name
+
+class Actor(models.Model):
+	first_name = models.CharField(max_length = 100)
+	last_name = models.CharField(max_length=100)
+	birth_date = models.DateTimeField(null=True, blank=True)
+
+	def __str__(self):
+		return self.last_name + " " + self.first_name
