@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MovieBox/models.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MovieBox/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -26,11 +26,9 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MovieBox/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,6 +52,7 @@
         <option value="$PROJECT_DIR$/MovieBoxProject/urls.py" />
         <option value="$PROJECT_DIR$/MovieBox/admin.py" />
         <option value="$PROJECT_DIR$/MovieBox/models.py" />
+        <option value="$PROJECT_DIR$/MovieBox/views.py" />
       </list>
     </option>
   </component>
@@ -91,17 +90,6 @@
               <item name="MovieBoxProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MovieBoxProject" type="462c0819:PsiDirectoryNode" />
               <item name="MovieBox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MovieBoxProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MovieBoxProject" type="462c0819:PsiDirectoryNode" />
-              <item name="MovieBox" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MovieBoxProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MovieBoxProject" type="462c0819:PsiDirectoryNode" />
-              <item name="MovieBoxProject" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -211,20 +199,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieBox/admin.py">
+    <entry file="file://$PROJECT_DIR$/MovieBox/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
+            <marker date="1515159341432" expanded="true" signature="604:1665" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieBox/models.py">
+    <entry file="file://$PROJECT_DIR$/MovieBox/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MovieBox/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
