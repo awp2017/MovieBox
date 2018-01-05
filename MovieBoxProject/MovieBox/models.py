@@ -43,3 +43,16 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class MBUserProfile(models.Model):
+	user = models.OneToOneField(MBUser, on_delete=models.CASCADE)
+	first_name = models.CharField(max_length=200)
+	last_name = models.CharField(max_length=200)
+	birth_date =  models.DateTimeField(null=True, blank=True)
+	profile_pic =  models.CharField(max_length=200)
+	favourites = models.ManyToManyField(Movie, related_name='Favourites')
+
+ 	def __str__(self):
+		return self.first_name + " " + self.last_name
+
