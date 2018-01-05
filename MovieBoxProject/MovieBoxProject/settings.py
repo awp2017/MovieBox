@@ -25,7 +25,7 @@ SECRET_KEY = 'k1rsl26^-^)1rr8c1+mj4xb9rz!0x-xf#%5*yihe#6x3ix^vqd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'MovieBox'
 ]
 
 MIDDLEWARE = [
