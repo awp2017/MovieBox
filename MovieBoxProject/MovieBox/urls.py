@@ -18,4 +18,5 @@ from MovieBox import views
 
 urlpatterns = [
 	url(r'^$', views.FrontPageMovieListView.as_view(), name = 'home'),
+    url(r'^movie-delete/(?P<pk>[0-9]+)/$',  views.MovieDeleteView.as_view(), name='movie_delete'),
 ]
