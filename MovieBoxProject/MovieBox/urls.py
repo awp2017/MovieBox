@@ -21,4 +21,6 @@ urlpatterns = [
     url(r'^actor/(?P<pk>[0-9]+)/$', views.ActorDetailView.as_view(), name='actor_detail'),
     url(r'^movie/(?P<pk>[0-9]+)/$', views.MovieDetailView.as_view(), name = 'movie_detail'),
     url(r'^movie/(?P<pk>[0-9]+)/delete$',  views.MovieDeleteView.as_view(), name='movie_delete'),
+    url(r'^movie/add/$', views.MovieCreateView.as_view(), name='movie_create'),
+    url(r'^movie/update/(?P<pk>[0-9]+)/$', views.MovieUpdateView.as_view(), name='movie_update'),
 ]

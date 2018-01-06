@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.urls import reverse
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, DeleteView
+from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from MovieBox.models import Movie, MBUser, Actor, MBUserProfile
+from MovieBox.forms import MovieForm
 
 # Create your views here.
 
@@ -25,3 +27,20 @@ class ActorDetailView(DetailView):
 class MovieDeleteView(DeleteView):
     template_name = 'delete.html'
     model = Movie
+
+class MovieCreateView(CreateView):
+    template_name = 'form.html'
+    form_class = MovieForm
+    model = Movie
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse('movie_detail', kwargs={'pk': self.object.pk})
+
+
+class MovieUpdateView(UpdateView):
+    template_name = 'form.html'
+    form_class = MovieForm
+    model = Movie
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse('movie_detail', kwargs={'pk': self.object.pk})
