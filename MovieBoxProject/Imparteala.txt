@@ -1,0 +1,36 @@
+MODELE
+user - Vlad
+userprofile - Sonia <3
+movie - Nanol
+actori - Flori
+
+VIEWS
+MovieDeleteView - Sonia
+Frontpage def (lista filme recente) - Vlad
+MovieDetailView - Flori
+ActorDetailView - Nanol
+---------------------------
+MovieUpdateView - Flori
+login - Sonia
+MovieCreateView - Vlad
+Favorite - Nanol
+ActorCreateView
+ActorUpdateView
+ActoreDeleteView
+
+TEMPLATES
+layout - Flori
+movie-details - Sonia 
+home (movie-list)-  Vlad 
+form - Nanol
+--------------------------
+delete - Flori
+meniu - Sonia
+update - Nanol
+actor-details -  Vlad 
+create - Nanol
+
+
+
+
+
