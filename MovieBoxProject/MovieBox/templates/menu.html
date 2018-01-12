@@ -1,5 +1,15 @@
 <nav >
-    <a href="{% url 'home' %}">Home</a>
-    <input type="text" placeholder="Search for a movie or an actor...">
-    <button>Search</button>
+    <ul>
+    <li> <a href="{% url 'home' %}">Home</a> </li>
+    <li> 
+    	<input type="text" placeholder="Search for a movie or an actor..."> 
+    	<button>Search</button>
+    </li>
+     {% if not request.user.is_authenticated %}
+     <li><a href="{% url 'login' %}">Login</a></li>
+     {% else %}
+     <li><a href="{% url 'movie_create' %}">Add a new movie</a></li>
+     <li><a href="{% url 'logout' %}">Logout</a></li>
+     {% endif %}
+    </ul>
 </nav>

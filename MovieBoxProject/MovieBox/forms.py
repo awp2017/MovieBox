@@ -5,3 +5,7 @@ class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
         fields = ('name', 'year', 'genre', 'actors')
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label="Username")
+    password = forms.CharField(label="Password", widget=forms.PasswordInput)

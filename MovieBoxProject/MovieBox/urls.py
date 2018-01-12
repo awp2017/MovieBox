@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^movie/(?P<pk>[0-9]+)/delete$',  views.MovieDeleteView.as_view(), name='movie_delete'),
     url(r'^movie/add/$', views.MovieCreateView.as_view(), name='movie_create'),
     url(r'^movie/(?P<pk>[0-9]+)/update$', views.MovieUpdateView.as_view(), name='movie_update'),
+    url(r'^login', views.login_view, name="login"),
+    url(r'^logout/$', views.logout_view, name="logout"),
 ]
