@@ -20,7 +20,16 @@
     <h4>Cast</h4>
     <ul>
        {% for actor in movie.actors.all %}
-            <li>{{ actor.first_name}} {{ actor.last_name}} </li>
+            <li>
+            	<div>{{ actor.first_name}} {{ actor.last_name}}</div>
+            	<a href="/actor/{{ actor.pk }}/">
+                    <button>
+                        Details
+                    </button>
+                </a>
+
+            </li>
+
         {% endfor %}
     </ul>
 </div>
