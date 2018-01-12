@@ -1,8 +1,41 @@
-<html>
-<head>
-	<title>MovieBox</title>
-</head>
-<body>
-	<p> ACESTA ESTE UN LINK </p>
-</body>
-</html>
+{% extends 'layout.html' %} 
+
+{% block title %}MovieBox{% endblock %} 
+
+{% block content %}
+
+<h1>Movies</h1>
+
+<table>
+    <caption>List of all Movies</caption>
+    <thead>
+        <tr>
+       		<th></th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Genre</th>
+            <th>Score</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+        <tr>
+        	<td>{{ movie.cover}}</td>
+            <td>{{ movie.name }}</td>
+            <td>{{ movie.year }}</td>
+            <td>{{ movie.get_genre_display }}</td>
+            <td>{{ movie.score }}</td>
+            <td>
+                <a href="/movie/{{ movie.pk }}/">
+                    <button>
+                        Details
+                    </button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
