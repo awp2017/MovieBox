@@ -1,0 +1,20 @@
+{% extends 'layout.html' %} 
+
+{% block title %}MovieBox/{{ actor.first_name }} {{ actor.last_name }}{% endblock %} 
+
+{% block content %}
+<h1>{{ actor.first_name }} {{ actor.last_name}}</h1>
+
+<div>
+    Date of birth: {{ actor.birth_date }}
+    <img src ="{{ actor.picture }}" />
+</div>
+
+<div>
+    <h4>Played in:</h4>
+    <ul>
+       <!-- de adaugat -->
+    </ul>
+</div>
+
+{% endblock %}
