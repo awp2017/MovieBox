@@ -26,7 +26,7 @@
      <li><a href="{% url 'register' %}">Register</a></li>
      {% else %}
      <li style="margin-top: 20px"><a href="{% url 'movie_create' %}" style="color: black;">Add a new movie</a></li>
-     <li><a href="{% url 'actor_create' %}">Add a new actor</a></li>
+     <li style="margin-top: 20px"><a href="{% url 'actor_create' %}" style="color: black;">Add a new actor</a></li>
      <li style="margin-top: 20px"><a href="{% url 'profile' pk=user.mbuserprofile.pk %}" style="color: black;">Profile</a></li>
      <li style="margin-top: 20px"><a href="{% url 'logout' %}" style="color: black;">Logout</a></li>
 
