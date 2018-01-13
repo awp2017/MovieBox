@@ -16,6 +16,9 @@
             <th>Genre</th>
             <th>Score</th>
             <th></th>
+            {% if user.is_superuser %}
+            <th></th>
+             {% endif %}
         </tr>
     </thead>
     <tbody>
@@ -33,6 +36,15 @@
                     </button>
                 </a>
             </td>
+            {% if user.is_superuser %}
+             <td>
+                <a href="/movie/{{ movie.pk }}/update">
+                    <button>
+                        Update
+                    </button>
+                </a>
+            </td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>
