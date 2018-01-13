@@ -24,7 +24,7 @@ class Actor(models.Model):
 
 class Movie(models.Model):
     name = models.CharField(max_length=100)
-    year = models.DateField()
+    date = models.DateField()
     genre = models.IntegerField(choices=[
         (1, "Comedy"),
         (2, "Action"),

@@ -34,21 +34,30 @@ class MovieDeleteView(DeleteView):
 
 
 class MovieCreateView(CreateView):
-    template_name = 'form.html'
+    template_name = 'add_movie.html'
     form_class = MovieForm
     model = Movie
 
     def get_success_url(self, *args, **kwargs):
         return reverse('movie_detail', kwargs={'pk': self.object.pk})
 
+    def get_context_data(self, **kwargs):
+        context = super(MovieCreateView, self).get_context_data(**kwargs)
+        context['actors'] = Actor.objects.all()
+        return context
 
 class MovieUpdateView(UpdateView):
-    template_name = 'form.html'
+    template_name = 'edit_movie.html'
     form_class = MovieForm
     model = Movie
 
     def get_success_url(self, *args, **kwargs):
         return reverse('movie_detail', kwargs={'pk': self.object.pk})
+
+    def get_context_data(self, **kwargs):
+        context = super(MovieUpdateView, self).get_context_data(**kwargs)
+        context['actors'] = Actor.objects.all()
+        return context
 
 
 #afisare mesaj de eroare daca username-ul sau parola nu sunt valide
