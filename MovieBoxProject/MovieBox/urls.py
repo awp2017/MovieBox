@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^login', views.login_view, name="login"),
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^search/(?P<input>[A-Za-z]+)/$', views.SearchPageListView.as_view(), name="search"),
+    url(r'^movie/(?P<pk>[0-9]+)/voted/(?P<value>[0-5])/$', views.AddedScoreView.as_view(), name="voted"),
 ]

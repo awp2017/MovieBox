@@ -2,10 +2,11 @@
 from __future__ import unicode_literals
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from MovieBox.models import Movie, MBUser, Actor, MBUserProfile
 from MovieBox.forms import MovieForm, LoginForm
+from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
@@ -93,4 +94,17 @@ class SearchPageListView(ListView):
         searchInput = self.kwargs['input']
         queryset = Movie.objects.filter(name__contains=searchInput).all()
         return queryset
+
+class AddedScoreView(View):
+     def get(self, request, *args, **kwargs):
+        obj = Movie.objects.get(pk=kwargs['pk'])
+        votedScore = float(kwargs['value'])
+        if request.user not in obj.votes.all():
+            nr = int(obj.votes.count())
+            obj.score = str(format((float(obj.score) * nr + votedScore) / (nr + 1), '.2f'))
+            obj.votes.add(request.user)
+            obj.save()
+            return render( request, 'voted.html', {'response': 'Thank you for your vote!'})
+        else:
+            return render( request, 'voted.html', {'response': 'You gave already voted for this movie'})
 

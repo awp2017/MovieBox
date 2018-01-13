@@ -32,12 +32,18 @@
 
         {% endfor %}
     </ul>
-    <h4>Vote</h4>
-{% load static %}<button onclick = "vote()" value = "1"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
-<button onclick = "/movie/{{ movie.pk }}" value = "2"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
-<button onclick = "/movie/{{ movie.pk }}" value = "3"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
-<button onclick = "/movie/{{ movie.pk }}" value = "4"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
-<button onclick = "/movie/{{ movie.pk }}" value = "5"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
+
+
+	{% load static %}
+     {% if request.user.is_authenticated %}
+     <h4>Vote</h4>
+	<a href="voted/1"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+	<a href="voted/2"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+	<a href="voted/3"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+	<a href="voted/4"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+	<a href="voted/5"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+	{% endif %}
+
 </div>
 
 {% endblock %}
