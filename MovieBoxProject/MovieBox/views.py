@@ -59,6 +59,10 @@ class MovieUpdateView(UpdateView):
         context['actors'] = Actor.objects.all()
         return context
 
+class FavoriteListView(ListView):
+    template_name = 'favorite.html'
+    model = MBUserProfile
+    context_object_name = 'MBUProfile'
 
 #afisare mesaj de eroare daca username-ul sau parola nu sunt valide
 def login_view(request):
