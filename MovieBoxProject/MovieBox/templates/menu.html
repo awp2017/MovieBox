@@ -16,7 +16,7 @@
      <li><a href="{% url 'login' %}">Login</a></li>
      {% else %}
      <li><a href="{% url 'movie_create' %}">Add a new movie</a></li>
-     <li><a href="{% url 'favorite' pk=user.pk %}">Favorite</a></li>
+     <li><a href="{% url 'profile' pk=user.mbuser.mbuserprofile.pk %}">Profile</a></li>
      <li><a href="{% url 'logout' %}">Logout</a></li>
      {% endif %}
     </ul>

@@ -1,0 +1,20 @@
+{% extends 'layout.html' %} 
+
+{% block title %}Favorites{% endblock %} 
+
+{% block content %}
+
+<h1>{{ mbuserprofile.first_name }} {{ mbuserprofile.last_name}}' profile</h1>
+<img src="{{mbuserprofile.profile_pic}}" />
+
+<div>
+	<p>Email: {{ mbuserprofile.user.email }}</p>
+	<p>Birth day: {{ mbuserprofile.birth_date }}</p>
+</div>
+
+<h3>Favourites:</h3>
+{% for movie in mbuserprofile.favourites.all %}
+	<p>{{ movie.name }}</p>
+{% endfor %}
+
+{% endblock %}

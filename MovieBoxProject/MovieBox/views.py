@@ -63,10 +63,14 @@ class MovieUpdateView(UpdateView):
         context['movie_pk'] = self.object.pk
         return context
 
-class FavoriteListView(ListView):
-    template_name = 'favorite.html'
+class UserProfileDetailView(DetailView):
+    template_name = 'profile.html'
     model = MBUserProfile
-    context_object_name = 'MBUProfile'
+    context_object_name = 'mbuserprofile'
+    #def get_context_data(self, **kwargs):
+     #   context = super(UserProfileDetailView, self).get_context_data(**kwargs)
+      #  context['mbuppk'] = self.object.pk
+       # return context
 
 #afisare mesaj de eroare daca username-ul sau parola nu sunt valide
 def login_view(request):
