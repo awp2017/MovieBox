@@ -38,7 +38,7 @@ class Movie(models.Model):
     score = models.FloatField(default=0.0)
     cover =  models.CharField(max_length=200, default='')
 
-    actors = models.ManyToManyField(Actor, related_name='MovieActor')
+    actors = models.ManyToManyField(Actor, related_name='Movies')
 
     # verifica daca un user a votat pentru filmul respectiv
     votes = models.ManyToManyField(User, blank=True, related_name='UserMovie')
