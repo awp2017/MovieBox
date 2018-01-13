@@ -5,25 +5,23 @@
 
 {% block content %}
 
-<h1>Edit Movie</h1>
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
+<h1 style="color: #64993F;">Edit Movie</h1>
 
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <!--{{ form.as_p }}-->
-    <div>
+    <div class="form-group">
         <label for="id_name">Name</label>
-        <input id="id_name" type="text" name="name" value="{{ form.instance.name }}" maxlength="100" required/>
+        <input class="form-control" id="id_name" type="text" name="name" value="{{ form.instance.name }}" maxlength="100" required/>
     </div>
-    <div>
+    <div class="form-group">
         <label for="id_date">Date</label>
-        <input id="id_date" type="text" name="date" value="{{ form.instance.date|date:'d/m/Y' }}" required/>
-        <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
-        </span>
+        <input class="form-control" id="id_date" type="text" name="date" value="{{ form.instance.date|date:'d/m/Y' }}" required/>
     </div>
-    <div>
+    <div class="form-group">
         <label for="id_genre">Genre</label>
-        <select id="id_genre" required name="genre">
+        <select id="id_genre" required name="genre" class="form-control">
               {% for value, display in form.fields.genre.choices %}
               <option value="{{ value }}"
                       {% if value == form.instance.genre %}
@@ -34,9 +32,9 @@
               {% endfor %}
         </select>
     </div>
-    <div>
-        <label for="id_actors">Actors</label>
-        <select id="id_actors" name="actors" multiple>
+    <div class="form-group">
+        <label for="id_actors">Distribution</label>
+        <select id="id_actors" name="actors" multiple  class="form-control">
             {% for actor in actors %}
                 <option value="{{ actor.pk }}"
                     {% if movie_pk in actor.movies_pk %}
@@ -49,15 +47,17 @@
             {% endfor %}
         </select>
     </div>
-    <div>
+    <div class="form-group">
         <label for="id_description">Description</label>
-        <textarea id="id_description" name="description" maxlength="5000" rows="10" cols="40" required>{{ form.instance.description }}</textarea>
+        <textarea  class="form-control" id="id_description" name="description" maxlength="5000" rows="10" cols="40" required>{{ form.instance.description }}</textarea>
     </div>
-    <div>
-        <label for="id_cover">Cover</label>
+    <div style="display: inline-block;">
+        <label for="id_cover">CoverPicture</label>
         <input id="id_cover" type="file" name="cover"/>
     </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+
+    <br>
+    <button type="submit" class="btn btn-success" style="padding: 15px; margin: 15px;">Save</button>
 </form>
 
 {% endblock %}
