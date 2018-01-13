@@ -5,25 +5,19 @@
             location.href="/search/" + input;
         }
     </script>
-    <style>
-        li:hover{
-            background-color:  #f6f2d9;
-        }
-        a:hover{
-            background-color:  #f6f2d9;
-        }
-    </style>
 <nav class="navbar"  style="background-color: #f6f2d9;  border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;"">
     <ul class="nav navbar-nav" >
     <li> {% load static %}<img src="{% static 'images/logo.jpg' %}" width = "200" ></li>
     <li style="margin-top: 20px"> <a href="{% url 'home' %}" style="color: black;">Home</a> </li>
     <li style="margin-top: 30px"> 
-    	<input type="text" placeholder="Search for a movie or an actor..." id="searchBox"> 
-    	<button onclick="getSearchParams()">Search</button>
+    <div class="input-group" style="margin-bottom: 5px; margin-top: -5px;">
+    	<input type="text" placeholder="Search for a movie or an actor..." id="searchBox" class="form-control" style="width:74%;"> 
+    	<button onclick="getSearchParams()" class="btn btn-default">Search</button>
+    </div>
     </li>
      {% if not request.user.is_authenticated %}
      <li style="margin-top: 20px"><a href="{% url 'login' %}" style="color: black;">Login</a></li>
-     <li><a href="{% url 'register' %}">Register</a></li>
+     <li style="margin-top: 20px"><a href="{% url 'register' %}" style="color: black;">Register</a></li>
      {% else %}
      <li style="margin-top: 20px"><a href="{% url 'movie_create' %}" style="color: black;">Add a new movie</a></li>
      <li style="margin-top: 20px"><a href="{% url 'actor_create' %}" style="color: black;">Add a new actor</a></li>
