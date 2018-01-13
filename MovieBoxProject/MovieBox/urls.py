@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^search/(?P<input>[A-Za-z]+)/$', views.SearchPageListView.as_view(), name="search"),
     url(r'^profile/(?P<pk>[0-9]+)/$', views.UserProfileDetailView.as_view(), name='profile'),
+    url(r'^movie/(?P<pk>[0-9]+)/voted/(?P<value>[0-5])/$', views.AddedScoreView.as_view(), name="voted"),
     url(r'^register/$', views.UserCreateView.as_view(), name="register"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

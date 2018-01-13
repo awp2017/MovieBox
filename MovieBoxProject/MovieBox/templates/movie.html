@@ -3,46 +3,57 @@
 {% block title %}MovieBox / {{ movie.name }}{% endblock %}
 
 {% block content %}
-<h1>{{ movie.name }}</h1>
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
+ <div style="float: right;">
+            
+			{% load static %}
+		     {% if request.user.is_authenticated %}
+			<a href="voted/1"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+			<a href="voted/2"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+			<a href="voted/3"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+			<a href="voted/4"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+			<a href="voted/5"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
+			{% endif %}
+			<br>
+			<div style="float: right;">
+			<h3 style="color: #64993F;">{{movie.score}}</h3>
+		      </div>     
+        </div>
 
-<div>
-    Date: {{ movie.date }}
-</div>
+ 	<div class="pull-left">
+        <img src={{movie.cover}}>
+    </div>
+    <div class="container">
+    	<div style="text-align: center;">
+        	<h2 style="color: #64993F;">{{movie.name}}</h2>
+        </div>
+      
+            {{ movie.get_genre_display }}
+            <br>
+             {{movie.date}}
+            <br>
 
-<div>
-    Genre: {{ movie.genre }}
-</div>
+        </div>
+        <br>
+        <br>
+        <br>
+          <div class="container">
+	        	{{movie.description}}
+        </div>
+          <div class="pull-left">
 
-<div>
-    Score : {{ movie.score }}
-</div>
-<div>
-    <h4>Cast</h4>
-    <ul>
-       {% for actor in movie.actors.all %}
-            <li>
-            	<div>{{ actor.first_name}} {{ actor.last_name}}</div>
-            	<a href="/actor/{{ actor.pk }}/">
-                    <button>
-                        Details
-                    </button>
-                </a>
+            {% if user.is_superuser %}
+            <a href="/movie/{{ movie.pk }}/update"">
+                 <button class="btn-success"  style="margin-top: 15px; padding:10px;">
+                     Update
+                 </button>
+            </a>
+            {% endif %}
+            </div>
+            
 
-            </li>
+    </div>
 
-        {% endfor %}
-    </ul>
-
-
-	{% load static %}
-     {% if request.user.is_authenticated %}
-     <h4>Vote</h4>
-	<a href="voted/1"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
-	<a href="voted/2"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
-	<a href="voted/3"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
-	<a href="voted/4"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
-	<a href="voted/5"><img src = "{% static 'images/star.png' %}" height = "30" width = "30"/></a>
-	{% endif %}
 
 </div>
 
