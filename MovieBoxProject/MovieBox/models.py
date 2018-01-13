@@ -45,12 +45,12 @@ class Movie(models.Model):
 
 
 class MBUserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='mbuserprofile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='MBUserProfile')
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    birth_date =  models.DateTimeField(null=True, blank=True)
-    profile_pic =  models.CharField(max_length=200, blank=True)
-    favourites = models.ManyToManyField(Movie, related_name='Favourites', blank=True)
+    birth_date =  models.DateField(null=True, blank=True)
+    profile_pic = models.ImageField(upload_to = 'images/', null=True, blank=True)
+    favourites = models.ManyToManyField(Movie, related_name='Favourites')
 
     def __str__(self):
         return self.first_name + " " + self.last_name

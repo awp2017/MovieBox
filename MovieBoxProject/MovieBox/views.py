@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from MovieBox.models import Movie, Actor, MBUserProfile
-from MovieBox.forms import MovieForm, LoginForm, ActorForm
+from MovieBox.forms import MovieForm, LoginForm, ActorForm, SignUpForm
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 
@@ -77,6 +77,14 @@ class ActorCreateView(CreateView):
     def get_success_url(self, *args, **kwargs):
         return reverse('actor_detail', kwargs={'pk': self.object.pk})
 
+class UserCreateView(CreateView):
+    template_name = "signup.html"
+    form_class = SignUpForm
+    model = MBUserProfile
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse('home')
+
 #afisare mesaj de eroare daca username-ul sau parola nu sunt valide
 def login_view(request):
     context = {}
@@ -123,4 +131,3 @@ class AddedScoreView(View):
             return render( request, 'voted.html', {'response': 'Thank you for your vote!'})
         else:
             return render( request, 'voted.html', {'response': 'You gave already voted for this movie'})
-

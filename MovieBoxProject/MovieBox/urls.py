@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^search/(?P<input>[A-Za-z]+)/$', views.SearchPageListView.as_view(), name="search"),
     url(r'^profile/(?P<pk>[0-9]+)/$', views.UserProfileDetailView.as_view(), name='profile'),
+    url(r'^register', views.UserCreateView.as_view(), name="register"),
 ]

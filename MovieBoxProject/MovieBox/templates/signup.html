@@ -1,0 +1,43 @@
+{% extends 'layout.html' %} {% block title %}Sign Up{% endblock %} {% block content %}
+
+<h1>Sign Up</h1>
+
+{% if form.errors %}
+<div class="alert alert-danger" role="alert">
+    {{ form.errors }}
+</div>
+{% endif %}
+
+<form method="POST" enctype="multipart/formdata" class="form">
+    {% csrf_token %}
+    <div>
+        <label for="id_username">Username</label>
+        <input id="id_username" type="text" name="email" value="{{ form.instance.email }}" maxlength="100" required/>
+    </div>
+    <div>
+        <label for="id_password">Password</label>
+        <input id="id_password" type="password" name="password" value="{{ form.instance.password }}" required/>
+    </div>
+    <div>
+        <label for="id_password">Confirm Password</label>
+        <input id="id_password" type="password" name="password" value="{{ form.instance.password }}" required/>
+    </div>
+    <div>
+        <label for="id_first_name">First Name</label>
+        <input id="id_first_name" type="text" name="first_name" value="{{ form.instance.first_name }}" maxlength="200" required/>
+    </div>
+    <div>
+        <label for="id_last_name">Last Name</label>
+        <input id="id_last_name" type="text" name="last_name" value="{{ form.instance.last_name }}" maxlength="200" required/>
+    </div>
+    <div>
+        <label for="id_birth_date">Birth Date</label>
+        <input id="id_birth_name" type="date" name="birth_date" value="{{ form.instance.birth_date }}" required/>
+    </div>
+    <div>
+        <label for="id_image">Profile Picture</label>
+        <input id="id_image" type="file" class="" value="{{ form.instance.profile_pic }}" name="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+{% endblock %}
