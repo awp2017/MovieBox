@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^movie/(?P<pk>[0-9]+)/update$', views.MovieUpdateView.as_view(), name='movie_update'),
     url(r'^login', views.login_view, name="login"),
     url(r'^logout/$', views.logout_view, name="logout"),
+    url(r'^search/(?P<input>[A-Za-z]+)/$', views.SearchPageListView.as_view(), name="search"),
 ]

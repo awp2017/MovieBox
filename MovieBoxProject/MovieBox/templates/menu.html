@@ -1,9 +1,16 @@
 <nav >
+    <script>
+        function getSearchParams(){
+            var input =  document.getElementById("searchBox").value;
+            location.href="/search/" + input;
+        }
+    </script>
+
     <ul>
     <li> <a href="{% url 'home' %}">Home</a> </li>
     <li> 
-    	<input type="text" placeholder="Search for a movie or an actor..."> 
-    	<button>Search</button>
+    	<input type="text" placeholder="Search for a movie or an actor..." id="searchBox"> 
+    	<button onclick="getSearchParams()">Search</button>
     </li>
      {% if not request.user.is_authenticated %}
      <li><a href="{% url 'login' %}">Login</a></li>

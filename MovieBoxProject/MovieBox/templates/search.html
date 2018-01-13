@@ -1,0 +1,41 @@
+{% extends 'layout.html' %} 
+
+{% block title %}Results of your search{% endblock %} 
+
+{% block content %}
+
+<h1>Movies</h1>
+
+<table>
+    <caption>List of all Movies</caption>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Genre</th>
+            <th>Score</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.cover}}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.year }}</td>
+            <td>{{ item.get_genre_display }}</td>
+            <td>{{ item.score }}</td>
+            <td>
+                <a href="/item/{{ item.pk }}/">
+                    <button>
+                        Details
+                    </button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

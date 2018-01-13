@@ -84,3 +84,13 @@ def logout_view(request):
     if request.method == 'GET':
         logout(request)
         return redirect('login')
+
+class SearchPageListView(ListView):
+    template_name = 'search.html'
+    model = Movie
+    context_object_name = 'items'
+    def get_queryset(self):
+        searchInput = self.kwargs['input']
+        queryset = Movie.objects.filter(name__contains=searchInput).all()
+        return queryset
+
