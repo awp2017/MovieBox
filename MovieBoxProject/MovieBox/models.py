@@ -32,7 +32,7 @@ class Movie(models.Model):
         (8, "Sci-Fi"),
     ])
     score = models.FloatField(default=0.0)
-    cover =  models.ImageField(default='')
+    cover =  models.ImageField(default='', blank=True)
     description = models.TextField(max_length=5000)
     actors = models.ManyToManyField(Actor, related_name='Movies')
 

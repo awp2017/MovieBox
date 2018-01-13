@@ -53,6 +53,10 @@
         <label for="id_description">Description</label>
         <textarea id="id_description" name="description" maxlength="5000" rows="10" cols="40" required>{{ form.instance.description }}</textarea>
     </div>
+    <div>
+        <label for="id_cover">Cover</label>
+        <input id="id_cover" type="file" name="cover"/>
+    </div>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
 

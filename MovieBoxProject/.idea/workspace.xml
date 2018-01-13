@@ -11,6 +11,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MovieBox/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="778">
+              <caret line="143" column="57" lean-forward="false" selection-start-line="143" selection-start-column="57" selection-end-line="143" selection-end-column="57" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MovieBox/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MovieBox/forms.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -21,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_movie.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit_movie.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MovieBox/templates/edit_movie.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="52" column="50" lean-forward="true" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_movie.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MovieBox/templates/add_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+            <state relative-caret-position="616">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="56" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -48,13 +80,13 @@
         <option value="$PROJECT_DIR$/MovieBoxProject/urls.py" />
         <option value="$PROJECT_DIR$/MovieBox/admin.py" />
         <option value="$PROJECT_DIR$/MovieBox/templates/form.html" />
-        <option value="$PROJECT_DIR$/MovieBox/models.py" />
-        <option value="$PROJECT_DIR$/MovieBox/templates/edit_movie.html" />
-        <option value="$PROJECT_DIR$/MovieBox/views.py" />
         <option value="$PROJECT_DIR$/MovieBox/urls.py" />
         <option value="$PROJECT_DIR$/MovieBoxProject/settings.py" />
         <option value="$PROJECT_DIR$/MovieBox/forms.py" />
         <option value="$PROJECT_DIR$/MovieBox/templates/add_movie.html" />
+        <option value="$PROJECT_DIR$/MovieBox/views.py" />
+        <option value="$PROJECT_DIR$/MovieBox/models.py" />
+        <option value="$PROJECT_DIR$/MovieBox/templates/edit_movie.html" />
       </list>
     </option>
   </component>
@@ -369,6 +401,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="724">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -510,13 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieBox/templates/edit_movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="18" column="94" lean-forward="false" selection-start-line="18" selection-start-column="94" selection-end-line="18" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MovieBox/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -527,36 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieBox/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MovieBox/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="60" column="36" lean-forward="true" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MovieBoxProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="120" column="23" lean-forward="false" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MovieBox/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="74" lean-forward="false" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
           <folding />
         </state>
       </provider>
@@ -571,8 +571,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MovieBox/templates/add_movie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+        <state relative-caret-position="616">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="56" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MovieBox/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="143" column="57" lean-forward="false" selection-start-line="143" selection-start-column="57" selection-end-line="143" selection-end-column="57" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MovieBox/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="74" lean-forward="false" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MovieBox/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MovieBox/templates/edit_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="52" column="50" lean-forward="true" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
           <folding />
         </state>
       </provider>
