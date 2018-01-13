@@ -5,59 +5,53 @@
 
 {% block content %}
 
-<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
-<h1 style="color: #64993F;">Edit Movie</h1>
+<h1>Edit Movie</h1>
 
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <!--{{ form.as_p }}-->
-
-    <div class="form-group">
-        <label for="id_title">Title</label>
-        <input class="form-control" type="text" name="title" value="{{ form.instance.name }}" required="" id="id_title" maxlength="200">
+    <div>
+        <label for="id_name">Name</label>
+        <input id="id_name" type="text" name="name" value="{{ form.instance.name }}" maxlength="100" required/>
     </div>
-
-     <div class="form-group">
-        <label for="id_deadline">Deadline:</label>
-        <div class='input-group date' id='id_deadline'>
-            <input type='text' class="form-control" name="deadline" 
-                   value="{{ form.instance.deadline|date:'d/m/Y'}}" required/>
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-        </div>
+    <div>
+        <label for="id_date">Date</label>
+        <input id="id_date" type="text" name="date" value="{{ form.instance.date|date:'d/m/Y' }}" required/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
     </div>
+    <div>
+        <label for="id_genre">Genre</label>
+        <select id="id_genre" required name="genre">
+              {% for value, display in form.fields.genre.choices %}
+              <option value="{{ value }}"
+                      {% if value == form.instance.genre %}
+                            selected
+                      {% endif %}>
+                  {{ display }}
+              </option>
+              {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="id_actors">Actors</label>
+        <select id="id_actors" name="actors" multiple>
+            {% for actor in actors %}
+                <option value="{{ actor.pk }}"
+                    {% if movie_pk in actor.movies_pk %}
+                        selected
+                    {% endif %}
+                >
+                    {{ actor.first_name|add:' '|add:actor.last_name }}
 
-     <div class="form-group">
-        <label for="id_category">Genre</label>
-        <select name="category" class="form-control" required="" id="id_category">
-           {% for value, display in form.fields.genre.choices %}
-                <option value="{{ value }}" 
-                        {% if value == form.instance.genre %} 
-                            selected 
-                        {% endif %}>
-                    {{ display }}
                 </option>
             {% endfor %}
         </select>
     </div>
-    <div class="form-group">
-        <label for="id_group">Distribution</label>
-        <select class="form-control" name="group" required="" id="id_group">
-             {% for actor in actors %}
-                <option value="{{ actor.pk }}"
-                    {% if movie_pk in actor.movies_pk %}
-                        selected
-                    {% endif %}>
-                    {{ actor.first_name|add:' '|add:actor.last_name }}
-                </option>         
-            {% endfor %}
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="id_title">Description</label>
-        <input class="form-control" type="text" name="title" value="{{ form.instance.description }}" required="" id="id_title" maxlength="2000">
+    <div>
+        <label for="id_description">Description</label>
+        <textarea id="id_description" name="description" maxlength="5000" rows="10" cols="40" required>{{ form.instance.description }}</textarea>
     </div>
     <div>
         <label for="id_cover">Cover</label>
@@ -66,7 +60,4 @@
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
 
-    <button type="submit" class="btn btn-success">Save</button>
-</form>
-</div>
 {% endblock %}

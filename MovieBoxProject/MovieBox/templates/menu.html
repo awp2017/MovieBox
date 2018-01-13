@@ -22,18 +22,14 @@
     	<button onclick="getSearchParams()">Search</button>
     </li>
      {% if not request.user.is_authenticated %}
-     <li><a href="{% url 'login' %}">Login</a></li>
+     <li style="margin-top: 20px"><a href="{% url 'login' %}" style="color: black;">Login</a></li>
      <li><a href="{% url 'register' %}">Register</a></li>
      {% else %}
-     <li><a href="{% url 'movie_create' %}">Add a new movie</a></li>
-     <li><a href="{% url 'actor_create' %}">Add a new actor</a></li>
-     <li><a href="{% url 'profile' pk=user.mbuserprofile.pk %}">Profile</a></li>
-     <li><a href="{% url 'logout' %}">Logout</a></li>
-     <li style="margin-top: 20px"><a href="{% url 'login' %}" style="color: black;">Login</a></li>
-     {% else %}
      <li style="margin-top: 20px"><a href="{% url 'movie_create' %}" style="color: black;">Add a new movie</a></li>
+     <li><a href="{% url 'actor_create' %}">Add a new actor</a></li>
      <li style="margin-top: 20px"><a href="{% url 'profile' pk=user.mbuserprofile.pk %}" style="color: black;">Profile</a></li>
      <li style="margin-top: 20px"><a href="{% url 'logout' %}" style="color: black;">Logout</a></li>
+
      {% endif %}
     </ul>
     </nav>
