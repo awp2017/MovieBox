@@ -15,6 +15,7 @@
     </li>
      {% if not request.user.is_authenticated %}
      <li><a href="{% url 'login' %}">Login</a></li>
+     <li><a href="{% url 'register' %}">Register</a></li>
      {% else %}
      <li><a href="{% url 'movie_create' %}">Add a new movie</a></li>
      <li><a href="{% url 'actor_create' %}">Add a new actor</a></li>

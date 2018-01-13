@@ -45,7 +45,7 @@ class Movie(models.Model):
 
 
 class MBUserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='MBUserProfile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='mbuserprofile')
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     birth_date =  models.DateField(null=True, blank=True)

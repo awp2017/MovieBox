@@ -25,9 +25,9 @@ urlpatterns = [
     url(r'^movie/add/$', views.MovieCreateView.as_view(), name='movie_create'),
     url(r'^movie/(?P<pk>[0-9]+)/update$', views.MovieUpdateView.as_view(), name='movie_update'),
     url(r'^movie/(?P<pk>[0-9]+)/voted/(?P<value>[0-5])/$', views.AddedScoreView.as_view(), name='voted'),
-    url(r'^login', views.login_view, name="login"),
+    url(r'^login/$', views.login_view, name="login"),
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^search/(?P<input>[A-Za-z]+)/$', views.SearchPageListView.as_view(), name="search"),
     url(r'^profile/(?P<pk>[0-9]+)/$', views.UserProfileDetailView.as_view(), name='profile'),
-    url(r'^register', views.UserCreateView.as_view(), name="register"),
+    url(r'^register/$', views.UserCreateView.as_view(), name="register"),
 ]
