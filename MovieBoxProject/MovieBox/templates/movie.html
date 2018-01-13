@@ -1,6 +1,6 @@
-{% extends 'layout.html' %} 
+{% extends 'layout.html' %}
 
-{% block title %}MovieBox / {{ movie.name }}{% endblock %} 
+{% block title %}MovieBox / {{ movie.name }}{% endblock %}
 
 {% block content %}
 <h1>{{ movie.name }}</h1>
@@ -32,6 +32,12 @@
 
         {% endfor %}
     </ul>
+    <h4>Vote</h4>
+{% load static %}<button onclick = "vote()" value = "1"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
+<button onclick = "/movie/{{ movie.pk }}" value = "2"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
+<button onclick = "/movie/{{ movie.pk }}" value = "3"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
+<button onclick = "/movie/{{ movie.pk }}" value = "4"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
+<button onclick = "/movie/{{ movie.pk }}" value = "5"><img src = "{% static 'images/star.png' %}" height = "30" width = "30" /></button>
 </div>
 
 {% endblock %}
