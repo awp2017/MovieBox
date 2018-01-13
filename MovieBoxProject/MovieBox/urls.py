@@ -18,11 +18,13 @@ from MovieBox import views
 
 urlpatterns = [
 	url(r'^$', views.FrontPageMovieListView.as_view(), name = 'home'),
+    url(r'^actor/add/$', views.ActorCreateView.as_view(), name='actor_create'),
     url(r'^actor/(?P<pk>[0-9]+)/$', views.ActorDetailView.as_view(), name='actor_detail'),
     url(r'^movie/(?P<pk>[0-9]+)/$', views.MovieDetailView.as_view(), name = 'movie_detail'),
     url(r'^movie/(?P<pk>[0-9]+)/delete$',  views.MovieDeleteView.as_view(), name='movie_delete'),
     url(r'^movie/add/$', views.MovieCreateView.as_view(), name='movie_create'),
     url(r'^movie/(?P<pk>[0-9]+)/update$', views.MovieUpdateView.as_view(), name='movie_update'),
+    url(r'^movie/(?P<pk>[0-9]+)/voted/(?P<value>[0-5])/$', views.AddedScoreView.as_view(), name='voted'),
     url(r'^login', views.login_view, name="login"),
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^search/(?P<input>[A-Za-z]+)/$', views.SearchPageListView.as_view(), name="search"),

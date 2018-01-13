@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from MovieBox.models import Movie, Actor, MBUserProfile
-from MovieBox.forms import MovieForm, LoginForm
+from MovieBox.forms import MovieForm, LoginForm, ActorForm
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 
@@ -68,10 +68,14 @@ class UserProfileDetailView(DetailView):
     template_name = 'profile.html'
     model = MBUserProfile
     context_object_name = 'mbuserprofile'
-    #def get_context_data(self, **kwargs):
-     #   context = super(UserProfileDetailView, self).get_context_data(**kwargs)
-      #  context['mbuppk'] = self.object.pk
-       # return context
+
+class ActorCreateView(CreateView):
+    template_name = 'add_actor.html'
+    form_class = ActorForm
+    model = Actor
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse('actor_detail', kwargs={'pk': self.object.pk})
 
 #afisare mesaj de eroare daca username-ul sau parola nu sunt valide
 def login_view(request):

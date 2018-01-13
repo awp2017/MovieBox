@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Add Actor{% endblock %}
+
+{% block content %}
+
+<h1>Add Actor</h1>
+
+{% if form.errors %}
+<div class="alert alert-danger" role="alert">
+    {{ form.errors }}
+</div>
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!--{{ form.as_p }}-->
+    <div>
+        <label for="id_first_name">First name</label>
+        <input id="id_first_name" type="text" name="first_name" value="{{ form.instance.first_name }}" maxlength="100" required/>
+    </div>
+    <div>
+        <label for="id_last_name">Last name</label>
+        <input id="id_last_name" type="text" name="last_name" value="{{ form.instance.last_name }}" maxlength="100" required/>
+    </div>
+    <div>
+        <label for="id_birth_date">Birth date</label>
+        <input id="id_birth_date" type="date" name="birth_date" value="{{ form.instance.birth_date }}" required>
+    </div>
+    <div>
+        <label for="id_picture">Picture</label>
+        <input id="id_picture" type="text" name="picture" value="{{ form.instance.picture }}" maxlength="100" required/>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+{% endblock %}
+
