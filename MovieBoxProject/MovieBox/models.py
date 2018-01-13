@@ -7,13 +7,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class MBUser(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='mbuser')
-    email = models.CharField(max_length = 100)
-
-    def __str__(self):
-        return self.email
-
 
 class Actor(models.Model):
     first_name = models.CharField(max_length = 100)
@@ -39,8 +32,8 @@ class Movie(models.Model):
         (8, "Sci-Fi"),
     ])
     score = models.FloatField(default=0.0)
-    cover =  models.CharField(max_length=200, default='')
-
+    cover =  models.ImageField(default='')
+    description = models.TextField(max_length=5000)
     actors = models.ManyToManyField(Actor, related_name='Movies')
 
     # verifica daca un user a votat pentru filmul respectiv
@@ -52,12 +45,12 @@ class Movie(models.Model):
 
 
 class MBUserProfile(models.Model):
-    user = models.OneToOneField(MBUser, on_delete=models.CASCADE, related_name='mbuserprofile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='mbuserprofile')
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     birth_date =  models.DateTimeField(null=True, blank=True)
     profile_pic =  models.CharField(max_length=200, blank=True)
-    favourites = models.ManyToManyField(Movie, related_name='Favourites')
+    favourites = models.ManyToManyField(Movie, related_name='Favourites', blank=True)
 
     def __str__(self):
         return self.first_name + " " + self.last_name

@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
-from MovieBox.models import Movie, MBUser, Actor, MBUserProfile
+from MovieBox.models import Movie, Actor, MBUserProfile
 from MovieBox.forms import MovieForm, LoginForm
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
