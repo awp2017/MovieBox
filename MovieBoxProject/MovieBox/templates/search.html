@@ -7,8 +7,8 @@
 <h1 style="color: #64993F;"">Movies</h1>
 {% for movie in items %}
 <div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
-    <div>
-        <img src={{movie.cover}}>
+    <div style="float:left; padding: 30px">
+        <img src="{{movie.cover.url}}" alt="pic" style="width: 200px">
     </div>
     <div>
         <h3 style="color: #64993F;">{{movie.name}}</h3>

@@ -4,35 +4,37 @@
 
 {% block content %}
 
-<h1>Add Actor</h1>
+<h1 style="color: #64993F;"">Add actor</h1>
 
 {% if form.errors %}
 <div class="alert alert-danger" role="alert">
     {{ form.errors }}
 </div>
 {% endif %}
-
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <!--{{ form.as_p }}-->
-    <div>
+   <div class="form-group">
         <label for="id_first_name">First name</label>
-        <input id="id_first_name" type="text" name="first_name" value="{{ form.instance.first_name }}" maxlength="100" required/>
+        <input class="form-control" id="id_first_name" type="text" name="first_name" value="{{ form.instance.first_name }}" maxlength="100" required/>
     </div>
-    <div>
+    <div class="form-group">
         <label for="id_last_name">Last name</label>
-        <input id="id_last_name" type="text" name="last_name" value="{{ form.instance.last_name }}" maxlength="100" required/>
+        <input class="form-control" id="id_last_name" type="text" name="last_name" value="{{ form.instance.last_name }}" maxlength="100" required/>
     </div>
-    <div>
+    <div class="form-group">
         <label for="id_birth_date">Birth date</label>
-        <input id="id_birth_date" type="date" name="birth_date" value="{{ form.instance.birth_date }}" required>
+        <input class="form-control" id="id_birth_date" type="date" name="birth_date" value="{{ form.instance.birth_date }}" required>
     </div>
     <div>
         <label for="id_picture">Picture</label>
-        <input id="id_picture" type="text" name="picture" value="{{ form.instance.picture }}" maxlength="100" required/>
+        <input id="id_picture" type="file" name="picture" required/>
     </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <br>
+    <button type="submit" class="btn btn-success">Add</button>
 </form>
 
 {% endblock %}
 
+</div>

@@ -4,17 +4,23 @@
 
 {% block content %}
 
-<h1>{{ mbuserprofile.first_name }} {{ mbuserprofile.last_name}}' profile</h1>
-<img src="{{mbuserprofile.profile_pic}}" />
+<h1 style="color: #64993F;">{{ mbuserprofile.first_name }} {{ mbuserprofile.last_name}}' profile</h1>
 
-<div>
-	<p>Email: {{ mbuserprofile.user.email }}</p>
-	<p>Birth day: {{ mbuserprofile.birth_date }}</p>
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
+	 <div class="form-group">
+	 	<h4 style="color: #64993F;">Email:</h4> {{ mbuserprofile.user.email }}
+	 </div>
+	<div>
+		<h4 style="color: #64993F;">Birth day:</h4> {{ mbuserprofile.birth_date }}
+	</div>
+
+	<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px; width: 90%">
+	<h4 style="color: #64993F;">Favourites:</h4>
+	{% for movie in mbuserprofile.favourites.all %}
+		<p>{{ movie.name }}</p>
+	{% endfor %}
+	</div>
+
 </div>
-
-<h3>Favourites:</h3>
-{% for movie in mbuserprofile.favourites.all %}
-	<p>{{ movie.name }}</p>
-{% endfor %}
 
 {% endblock %}
