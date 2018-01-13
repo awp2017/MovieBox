@@ -1,12 +1,14 @@
 {% extends 'layout.html' %} {% block title %}Login{% endblock %} {% block content %}
 
-<h1>Login</h1>
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
+<h1 style="color: #64993F;">Login</h1>
 
 {% if form.errors %}
 <div class="alert alert-danger" role="alert">
     {{ form.errors }}
 </div>
 {% endif %}
+
 
 <form method="POST" enctype="multipart/formdata" class="form">
     {% csrf_token %}
@@ -18,6 +20,7 @@
         <label for="id_password">Password:</label> 
         <input type="password" name="password" required="" id="id_password" class="form-control">
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-success">Login</button>
 </form>
+</div>
 {% endblock %}

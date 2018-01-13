@@ -48,16 +48,17 @@
 	        	{{movie.description}}
         </div>
         <div class="container">
-         <h4>Cast</h4>
+    <h4 style="color: #64993F;">Cast</h4>
     <ul>
        {% for actor in movie.actors.all %}
             <li>
-            	<div>{{ actor.first_name}} {{ actor.last_name}}</div>
+            	<div style="display:inline-block">{{ actor.first_name}} {{ actor.last_name}}
             	<a href="/actor/{{ actor.pk }}/">
-                    <button>
+                    <button class="btn btn-success">
                         Details
                     </button>
                 </a>
+                </div>
 
             </li>
 
