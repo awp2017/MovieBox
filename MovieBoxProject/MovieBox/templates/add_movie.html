@@ -5,7 +5,8 @@
 
 {% block content %}
 
-<h1>Add Movie</h1>
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
+<h1 style="color: #64993F;">Add Movie</h1>
 
 {% if form.errors %}
 <div class="alert alert-danger" role="alert">
@@ -16,17 +17,20 @@
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <!--{{ form.as_p }}-->
-    <div>
+    
+    <div class="form-group">
         <label for="id_name">Name</label>
-        <input id="id_name" type="text" name="name" value="{{ form.instance.name }}" maxlength="100" required/>
+        <input class="form-control" id="id_name" type="text" name="name" value="{{ form.instance.name }}" maxlength="100" required/>
     </div>
-    <div>
+
+    <div class="form-group">
         <label for="id_year">Date</label>
-        <input id="id_year" type="date" name="date" value="{{ form.instance.date }}" required>
+            <input class="form-control" id="id_year" type="date" name="date" value="{{ form.instance.date }}" required>
     </div>
-    <div>
+
+    <div class="form-group">
         <label for="id_genre">Genre</label>
-        <select id="id_genre" required name="genre">
+        <select id="id_genre" required name="genre" class="form-control">
               {% for value, display in form.fields.genre.choices %}
               <option value="{{ value }}"
                       {% if value == form.instance.genre %}
@@ -37,9 +41,10 @@
               {% endfor %}
         </select>
     </div>
-    <div>
+
+    <div class="form-group">
         <label for="id_actors">Actors</label>
-        <select id="id_actors" name="actors" multiple>
+        <select class="form-control" id="id_actors" name="actors" multiple>
             {% for actor in actors %}
                 <option value="{{ actor.pk }}">
                     {{ actor.first_name|add:' '|add:actor.last_name }}
@@ -47,15 +52,18 @@
             {% endfor %}
         </select>
     </div>
-    <div>
+
+    <div class="form-group">
         <label for="id_description">Description</label>
-        <textarea id="id_description" name="description" maxlength="5000" rows="10" cols="40" required>{{ form.instance.description }}</textarea>
+        <textarea class="form-control" id="id_description" name="description" maxlength="5000" rows="10" cols="40" required>{{ form.instance.description }}</textarea>
     </div>
+    <br/>
     <div>
         <label for="id_cover">Cover</label>
         <input id="id_cover" type="file" name="cover" required/>
     </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+    <br/>
+    <button type="submit" class="btn btn-success">Save</button>
 </form>
-
+</div>
 {% endblock %}
