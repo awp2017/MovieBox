@@ -4,50 +4,36 @@
 
 {% block content %}
 
-<h1>Movies</h1>
-
-<table>
-    <caption>List of all Movies</caption>
-    <thead>
-        <tr>
-       		<th></th>
-            <th>Name</th>
-            <th>Date</th>
-            <th>Genre</th>
-            <th>Score</th>
-            <th></th>
-            {% if user.is_superuser %}
-            <th></th>
-             {% endif %}
-        </tr>
-    </thead>
-    <tbody>
-        {% for movie in movies %}
-        <tr>
-        	<td>{{ movie.cover}}</td>
-            <td>{{ movie.name }}</td>
-            <td>{{ movie.date }}</td>
-            <td>{{ movie.get_genre_display }}</td>
-            <td>{{ movie.score }}</td>
-            <td>
+<h1 style="color: #64993F;"">Movies</h1>
+{% for movie in movies %}
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
+    <div>
+        <img src={{movie.cover}}>
+    </div>
+    <div>
+        <h3 style="color: #64993F;">{{movie.name}}</h3>
+        <div style="float: left;">
+            {{ movie.get_genre_display }}
+            <br>
+             {{movie.date}}
+            <br>
                 <a href="/movie/{{ movie.pk }}/">
-                    <button>
+                    <button  class="btn-success"  style="margin-top: 15px; padding: 10px;">
                         Details
                     </button>
                 </a>
-            </td>
             {% if user.is_superuser %}
-             <td>
-                <a href="/movie/{{ movie.pk }}/update">
-                    <button>
-                        Update
-                    </button>
-                </a>
-            </td>
+            <a href="/movie/{{ movie.pk }}/update">
+                 <button class="btn-success"  style="margin-top: 15px; padding:10px;">
+                     Update
+                 </button>
+            </a>
             {% endif %}
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
+        </div>
+        <div style="float: right;">
+            <h3 style="color: #64993F;">{{movie.score}}</h3>
+        </div>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}

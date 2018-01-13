@@ -5,20 +5,29 @@
             location.href="/search/" + input;
         }
     </script>
-
-    <ul>   
-    <li> {% load static %}<img src="{% static 'images/logo.jpg' %}" width = "200"></li>
-    <li> <a href="{% url 'home' %}">Home</a> </li>
-    <li> 
+    <style>
+        li:hover{
+            background-color:  #f6f2d9;
+        }
+        a:hover{
+            background-color:  #f6f2d9;
+        }
+    </style>
+<nav class="navbar"  style="background-color: #f6f2d9;  border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;"">
+    <ul class="nav navbar-nav" >
+    <li> {% load static %}<img src="{% static 'images/logo.jpg' %}" width = "200" ></li>
+    <li style="margin-top: 20px"> <a href="{% url 'home' %}" style="color: black;">Home</a> </li>
+    <li style="margin-top: 30px"> 
     	<input type="text" placeholder="Search for a movie or an actor..." id="searchBox"> 
     	<button onclick="getSearchParams()">Search</button>
     </li>
      {% if not request.user.is_authenticated %}
-     <li><a href="{% url 'login' %}">Login</a></li>
+     <li style="margin-top: 20px"><a href="{% url 'login' %}" style="color: black;">Login</a></li>
      {% else %}
-     <li><a href="{% url 'movie_create' %}">Add a new movie</a></li>
-     <li><a href="{% url 'profile' pk=user.mbuserprofile.pk %}">Profile</a></li>
-     <li><a href="{% url 'logout' %}">Logout</a></li>
+     <li style="margin-top: 20px"><a href="{% url 'movie_create' %}" style="color: black;">Add a new movie</a></li>
+     <li style="margin-top: 20px"><a href="{% url 'profile' pk=user.mbuserprofile.pk %}" style="color: black;">Profile</a></li>
+     <li style="margin-top: 20px"><a href="{% url 'logout' %}" style="color: black;">Logout</a></li>
      {% endif %}
     </ul>
+    </nav>
 </nav>

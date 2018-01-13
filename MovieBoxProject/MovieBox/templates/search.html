@@ -1,44 +1,39 @@
 {% extends 'layout.html' %} 
 
-{% block title %}Results of your search{% endblock %} 
+{% block title %}MovieBox{% endblock %} 
 
 {% block content %}
 
-<h1>Results of your search</h1>
-
-<table>
-    <caption>Movies</caption>
-    <thead>
-        <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Year</th>
-            <th>Genre</th>
-            <th>Score</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in items %}
-        <tr>
-            <td>{{ item.cover}}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.year }}</td>
-            <td>{{ item.get_genre_display }}</td>
-            <td>{{ item.score }}</td>
-            <td>
-                <a href="/item/{{ item.pk }}/">
-                    <button>
+<h1 style="color: #64993F;"">Movies</h1>
+{% for movie in items %}
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
+    <div>
+        <img src={{movie.cover}}>
+    </div>
+    <div>
+        <h3 style="color: #64993F;">{{movie.name}}</h3>
+        <div style="float: left;">
+            Genre: {{ movie.get_genre_display }}
+            <br>
+             {{movie.date}}
+            <br>
+                <a href="/movie/{{ movie.pk }}/">
+                    <button  class="btn-success"  style="margin-top: 15px; padding: 10px;">
                         Details
                     </button>
                 </a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-<br>
-
-
+            {% if user.is_superuser %}
+            <a href="/movie/{{ movie.pk }}/update">
+                 <button class="btn-success"  style="margin-top: 15px; padding:10px;">
+                     Update
+                 </button>
+            </a>
+            {% endif %}
+        </div>
+        <div style="float: right;">
+            <h3 style="color: #64993F;">{{movie.score}}</h3>
+        </div>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}
