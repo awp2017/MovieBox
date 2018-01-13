@@ -15,8 +15,11 @@
         <input id="id_name" type="text" name="name" value="{{ form.instance.name }}" maxlength="100" required/>
     </div>
     <div>
-        <label for="id_year">Date</label>
-        <input id="id_year" type="date" name="date" value="{{ form.instance.date }}" required/>
+        <label for="id_date">Date</label>
+        <input id="id_date" type="text" name="date" value="{{ form.instance.date|date:'d/m/Y' }}" required/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
     </div>
     <div>
         <label for="id_genre">Genre</label>
@@ -35,8 +38,13 @@
         <label for="id_actors">Actors</label>
         <select id="id_actors" name="actors" multiple>
             {% for actor in actors %}
-                <option value="{{ actor.pk }}">
+                <option value="{{ actor.pk }}"
+                    {% if movie_pk in actor.movies_pk %}
+                        selected
+                    {% endif %}
+                >
                     {{ actor.first_name|add:' '|add:actor.last_name }}
+
                 </option>
             {% endfor %}
         </select>

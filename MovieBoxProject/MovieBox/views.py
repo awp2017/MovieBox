@@ -56,7 +56,11 @@ class MovieUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(MovieUpdateView, self).get_context_data(**kwargs)
-        context['actors'] = Actor.objects.all()
+        actors = Actor.objects.all()
+        for actor in actors:
+            actor.movies_pk = [pk for pk in actor.Movies.values_list('pk', flat=True)]
+        context['actors'] = actors
+        context['movie_pk'] = self.object.pk
         return context
 
 
