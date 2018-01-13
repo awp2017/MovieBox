@@ -26,7 +26,14 @@
     <div class="container">
     	<div style="text-align: center;">
         	<h2 style="color: #64993F;">{{movie.name}}</h2>
+
+            {% if request.user.is_authenticated %}
+            <a href="favorite/{{user.pk}}">
+                {% if movie not in request.user.mbuserprofile.favourites.all %}Add to favorites{% else %}Remove from favorites{% endif %}
+            </a>     
+            {% endif %}
         </div>
+
       
             {{ movie.get_genre_display }}
             <br>
@@ -54,7 +61,5 @@
 
     </div>
 
-
-</div>
 
 {% endblock %}

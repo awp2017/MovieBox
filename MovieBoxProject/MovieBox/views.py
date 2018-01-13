@@ -142,3 +142,15 @@ def upload_pic(request):
             m.save()
             return HttpResponse('image upload success')
     return HttpResponseForbidden('allowed only via POST')
+
+class AddedFavoriteView(View):
+     def get(self, request, *args, **kwargs):
+        obj = Movie.objects.get(pk=kwargs['pk'])
+        if obj not in request.user.mbuserprofile.favourites.all():
+            request.user.mbuserprofile.favourites.add(obj)
+            request.user.mbuserprofile.save()
+            return render( request, 'favorite.html', {'response': 'The movie was added to your favorites list!'})
+        else:
+            request.user.mbuserprofile.favourites.remove(obj)
+            request.user.mbuserprofile.save()
+            return render( request, 'favorite.html', {'response': 'The movie was removed from your favorites list'})
