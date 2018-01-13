@@ -3,28 +3,31 @@
 {% block title %}MovieBox/{{ actor.first_name }} {{ actor.last_name }}{% endblock %} 
 
 {% block content %}
-<h1>{{ actor.first_name }} {{ actor.last_name}}</h1>
-
+<h1 style="color: #64993F;">{{ actor.first_name }} {{ actor.last_name}}</h1>
+<div class="container well" style="background-color: #f6f2d9; border-color: #64993F; border-width: 2px; box-shadow: 2px 2px;">
+<div class="pull-right">
+  <img src="{{actor.picture.url}}" alt="pic" style="width: 200px">
+</div>
 <div>
     Date of birth: {{ actor.birth_date }}
-    <img src ="{{ actor.picture }}" />
 </div>
 
 <div>
-    <h4>Played in:</h4>
-    <ul>
+
+    <h4 style="color: #64993F;">Played in:</h4>
+      <ul>
        	{% for movie in actor.Movies.all %}
-       	<li>
-       		<p>{{ movie.name }}</p>
+        <li><div style="display: inline-block;">
+       		{{ movie.name }}
        		<a href="/movie/{{ movie.pk }}/">
-                    <button>
+                    <button class="btn btn-success">
                         Details
                     </button>
-                </a>
-   	   	</li>
+          </a>
+          </div></li>
 
        {% endfor %}
-    </ul>
+  </ul>
 </div>
-
+</div>
 {% endblock %}
