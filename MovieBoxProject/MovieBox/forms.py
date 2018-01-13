@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
-        fields = ('name', 'date', 'genre', 'actors', 'description')
+        fields = ('name', 'date', 'genre', 'actors', 'description', 'cover')
 
 class ActorForm(forms.ModelForm):
     class Meta:

@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from MovieBox import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
 	url(r'^$', views.FrontPageMovieListView.as_view(), name = 'home'),
@@ -30,4 +33,4 @@ urlpatterns = [
     url(r'^search/(?P<input>[A-Za-z]+)/$', views.SearchPageListView.as_view(), name="search"),
     url(r'^profile/(?P<pk>[0-9]+)/$', views.UserProfileDetailView.as_view(), name='profile'),
     url(r'^register/$', views.UserCreateView.as_view(), name="register"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

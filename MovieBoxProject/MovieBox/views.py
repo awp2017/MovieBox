@@ -8,6 +8,7 @@ from MovieBox.models import Movie, Actor, MBUserProfile
 from MovieBox.forms import MovieForm, LoginForm, ActorForm, SignUpForm
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseForbidden
 
 # Create your views here.
 
@@ -131,3 +132,13 @@ class AddedScoreView(View):
             return render( request, 'voted.html', {'response': 'Thank you for your vote!'})
         else:
             return render( request, 'voted.html', {'response': 'You gave already voted for this movie'})
+
+def upload_pic(request):
+    if request.method == 'POST':
+        form = MovieForm(request.POST, request.FILES)
+        if form.is_valid():
+            m = Movie.objects.get(pk=request.Movie.pk)
+            m.cover = form.cleaned_data['cover']
+            m.save()
+            return HttpResponse('image upload success')
+    return HttpResponseForbidden('allowed only via POST')
