@@ -11,17 +11,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add_actor.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MovieBox/templates/add_actor.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MovieBox/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -31,11 +21,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_movie.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add_movie.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MovieBox/templates/add_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="53" column="4" lean-forward="false" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+            <state relative-caret-position="706">
+              <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -63,13 +53,13 @@
         <option value="$PROJECT_DIR$/MovieBox/views.py" />
         <option value="$PROJECT_DIR$/MovieBox/urls.py" />
         <option value="$PROJECT_DIR$/MovieBoxProject/settings.py" />
-        <option value="$PROJECT_DIR$/MovieBox/templates/add_movie.html" />
         <option value="$PROJECT_DIR$/MovieBox/forms.py" />
+        <option value="$PROJECT_DIR$/MovieBox/templates/add_movie.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="75" />
+    <option name="x" value="992" />
     <option name="y" value="24" />
     <option name="width" value="928" />
     <option name="height" value="1056" />
@@ -101,6 +91,12 @@
               <item name="MovieBoxProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MovieBoxProject" type="462c0819:PsiDirectoryNode" />
               <item name="MovieBox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieBoxProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieBoxProject" type="462c0819:PsiDirectoryNode" />
+              <item name="MovieBox" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MovieBoxProject" type="b2602c69:ProjectViewProjectNode" />
@@ -158,10 +154,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="24" width="928" height="1056" extended-state="4" />
+    <frame x="992" y="24" width="928" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24784483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21551724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -521,14 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieBox/templates/add_movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="53" column="4" lean-forward="false" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MovieBox/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -565,18 +553,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieBox/templates/add_actor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MovieBox/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="74" lean-forward="false" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MovieBox/templates/add_actor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="10" lean-forward="false" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MovieBox/templates/add_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
           <folding />
         </state>
       </provider>
