@@ -4,7 +4,7 @@ from MovieBox.models import Movie
 class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
-        fields = ('name', 'date', 'genre', 'actors')
+        fields = ('name', 'date', 'genre', 'actors', 'description')
 
 class LoginForm(forms.Form):
     username = forms.CharField(label="Username")
